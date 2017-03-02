@@ -1,31 +1,28 @@
+*, *::before, *::after {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
 html {
     height: 100%;
     font-size: 100%;
-    
 }
 
 body {
     font-family: "Open Sans";
     color: white;
     min-height: 100%;
-    
-}
-
-body.landing {
-    background-color: rgb(58,23,63);
-    
 }
 
 .navbar {
     padding: .5rem;
     background-color: rgb(101,18,95);
-    
 }
 
 .navbar .logo {
     position: relative;
     left: 2rem;
-    
 }
 
 .hero-content {
@@ -35,7 +32,6 @@ body.landing {
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
-    
 }
 
 .hero-content .hero-title {
@@ -52,7 +48,6 @@ body.landing {
     text-transform: uppercase;
     letter-spacing: 0.5rem;
     text-shadow: 1px 1px 0px rgb(58,23,63);
-    
 }
 
 .selling-point {
@@ -62,7 +57,6 @@ body.landing {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
-    
 }
 
 .point {
@@ -71,12 +65,10 @@ body.landing {
     width: 33.3%;
     padding: 2rem;
     text-align: center;
-    
 }
 
 .point .point-title{
     font-size: 1.25rem;
-    
 }
 
 .ion-music-note,
@@ -84,5 +76,25 @@ body.landing {
 .ion-iphone {
     color: rgb(233,50,117);
     font-size: 5rem;
-    
+}
+
+.container {
+    margin: 0 auto;
+    max-width: 64rem;
+}
+
+/* Medium screens (640px) */
+@media(min-width: 640px) {
+    html {font-size: 112%}
+}
+
+.column {
+    float: left;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+/* Large screens (1024px) */
+@media (min-width: 1024px) {
+    html {font-size: 120%}
 }
