@@ -15,7 +15,7 @@ body {
     min-height: 100%;
 }
 
-.navbar {
+.navbar  {
     position: relative;
     padding: .5rem;
     background-color: rgba(101,18,95,0.5);
@@ -51,11 +51,15 @@ body {
     font-weight: 700;
     text-transform: uppercase;
     text-decoration: none;
-    cursor: pointer
+    cursor: pointer;
 }
 
 .links-container .navbar-link:hover {
     color: rgb(233,50,117);
+}
+
+.links-container .navbar-link:active {
+    background-color: white;
 }
 
 .hero-content {
@@ -147,5 +151,4 @@ body {
 
 .clearfix::after {
     clear: both;
-}
 }
