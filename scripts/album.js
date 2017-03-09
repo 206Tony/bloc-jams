@@ -21,44 +21,70 @@ var albumMarconi = {
     year: '1909',
     albumArtUrl: 'assets/images/album_covers/20.png',
     songs: [
-        {title: 'Hello, Operator?', duration: '1:01' },
-        {title: 'Ring, ring, ring', duration: '5:01' },
-        {title: 'Fits in your pocket', duration: '3:21' },
-        {title: 'Can you hear me now', duration: '3:14' },
-        {title: 'Wrong phone number', duration: '2:15' }
-        
+        { title: 'Hello, Operator?', duration: '1:01' },
+        { title: 'Ring, ring, ring', duration: '5:01' },
+        { title: 'Fits in your pocket', duration: '3:21' },
+        { title: 'Can you hear me now', duration: '3:14' },
+        { title: 'Wrong phone number', duration: '2:15' }      
+    ]
+};
+
+var albumDreDog = {
+    title: 'The New Jim Jones',
+    artist: 'Dre Dog',
+    label: 'In-a-Minute Records',
+    year: '1993',
+    albumArtUrl: 'assets/images/album_covers/The_New_Jim_Jones',
+    songs: [
+        { title: 'Lets Get High', duration: '1:24' },
+        { title: 'Most Hated Man in Frisco', duration: '3:08' },
+        { title: 'The Ave.', duration: '4:27' },
+        { title: 'Smoke Dope & Rap', duration: '4:36' },
+        { title: 'Off That Chewy', duration: '3:46' }      
     ]
 };
 
 var createSongRow = function(songNumber, songName, songLength) {
     var template =
          '<tr class="album-view-song-item">'
-       + '<td class="song-item-number">' + songNumber + '</td>'
-       + '<td class="song-item-title">' + songName + '</td>'
-       + '<td class="song-item-duration">' + songLength + '</td>'
+       + '  <td class="song-item-number">' + songNumber + '</td>'
+       + '  <td class="song-item-title">' + songName + '</td>'
+       + '  <td class="song-item-duration">' + songLength + '</td>'
        + '</tr>'
        ;
     return template;
 };
 
-var setCurrentAlbum = function(album) {
-    var albumTitle= document.getElementsByClassName('album-view-title')[0];
+
+    var albumTitle = document.getElementsByClassName('album-view-title')[0];
     var albumArtist = document.getElementsByClassName('album-view-artist')[0];
-    var albumReleaseInfo = document.getElementsByName('album-view-release-info')[0];
+    var albumReleaseInfo = document.getElementsByClassName('album-view-release-info')[0];
     var albumImage = document.getElementsByClassName('album-cover-art')[0];
     var albumSongList = document.getElementsByClassName('album-view-song-list')[0];
-    
+  
+var setCurrentAlbum = function(album) {  
     albumTitle.firstChild.nodeValue = album.title;
     albumArtist.firstChild.nodeValue = album.artist;
     albumReleaseInfo.firstChild.nodeValue = album.year + ' ' + album.label;
     albumImage.setAttribute('src', album.albumArtUrl);
-    
     albumSongList.innerHTML = '';
     
     for (var i = 0; i< album.songs.length; i++) {
-        albumSongList.innerHTML += createSongRow(i + 1, album.songs[i].title, album.songs[i].duration);       
+        albumSongList.innerHTML += createSongRow(i + 1, album.songs[i].name, album.songs[i].length);       
     }
 };
 window.onload = function() {
     setCurrentAlbum(albumPicasso);
+      
+        var albums = [albumPicasso, albumMarconi, albumDreDog];
+        var index = 1;
+    albumImage.addEventListener("click", function(event) {
+      
+        setCurrentAlbum(albums[index]);
+        index++;
+        if (index == albums.length) {
+            index = 0;
+        }
+    
+    });
 };
