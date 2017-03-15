@@ -7,7 +7,6 @@ var revealPoint = function() {
      });
 };
     $.each($('.point'), revealPoint);
-
 };
             
 $(window).load(function() {
