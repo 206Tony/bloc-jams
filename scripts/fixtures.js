@@ -25,7 +25,7 @@ var albumMarconi = {
         { name: 'Ring, ring, ring', length: '5:01' },
         { name: 'Fits in your pocket', length: '3:21' },
         { name: 'Can you hear me now', length: '3:14' },
-        { name: 'Wrong phone number', length: '2:15' },
+        { name: 'Wrong phone number', length: '2:15' }
         
     ]
 };
@@ -41,6 +41,7 @@ var albumDreDog = {
         { name: 'Most Hated Man in Frisco', length: '3:08' },
         { name: 'The Ave.', length: '4:27' },
         { name: 'Smoke Dope & Rap', length: '4:36' },
-        { name: 'Off That Chewy', length: '3:46'}      
+        { name: 'Off That Chewy', length: '3:46' } 
+        
     ]
 };
